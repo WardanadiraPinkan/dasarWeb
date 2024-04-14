@@ -1,0 +1,32 @@
+class Mobil
+{
+
+    private $merek;
+
+    public function __construct($merek)
+    {
+
+        echo "Mobil baru dibuat.<br>";
+        $this->merek = $merek;
+
+    }
+
+    public function getMerek()
+    {
+
+        return $this->merek;
+
+    }
+
+    public function __destruct()
+    {
+
+        echo "Mobil dihancurkan.<br>";
+
+    }
+
+}
+
+$mobil = new Mobil("Toyota");
+
+echo "Merek: " . $mobil->getMerek() . "<br>";

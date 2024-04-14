@@ -1,0 +1,54 @@
+class Animal
+{
+protected:
+    std::string name;
+
+public:
+    Animal(const std::string& name) : name(name) {}
+
+    void eat() const
+    {
+        std::cout << name << " is eating.\n";
+    }
+
+    void sleep() const
+    {
+        std::cout << name << " is sleeping.\n";
+    }
+};
+
+class Cat : public Animal
+{
+public:
+    Cat(const std::string& name) : Animal(name) {}
+
+    void meow() const
+    {
+        std::cout << name << " says meow!\n";
+    }
+};
+
+class Dog : public Animal
+{
+public:
+    Dog(const std::string& name) : Animal(name) {}
+
+    void bark() const
+    {
+        std::cout << name << " says woof!\n";
+    }
+};
+
+int main()
+{
+    Cat cat("Whiskers");
+    Dog dog("Buddy");
+
+    cat.eat();
+    dog.sleep();
+
+    cat.meow();
+    dog.bark();
+
+    return 0;
+}
